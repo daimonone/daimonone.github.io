@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+
+    <title>
+      
+    MYSQL十大常用字符串函数 - myDoc
+    
+    </title>
+
+
+  <link href="asset/css/style.css" rel="stylesheet" > 
+  <link href="asset/js/xcode.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="asset/img/favicon.png">
+  <script src="asset/js/headroom.js"></script>
+
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="asset/css/font-awesome.css">
+ -->
+
+  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
+  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
+
+  </head>
+
+  <!-- 主体开始 -->
+  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
+  <!-- 上面为主页白底色版本 -->
+    
+<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
+<!-- 上面是主页灰底色版本 -->
+
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<!-- 头部位置 -->
+
+<header id="header" class="header bg-white headroom">
+  <div class="navbar-container"> 
+    <a href="index.html" class="navbar-logo"><img src="asset/img/favicon.png"> </a>
+    <div class="navbar-menu"> 
+
+        
+        <a href="index.html">首页</a>
+        
+        <a href="archives.html">归档</a>
+        
+        <a href="about.html">关于</a>
+        
+        
+    </div> 
+    <!-- 搜索框体 -->
+    <!--  <div class="navbar-search" onclick="">
+        <span class="icon-search"></span>
+        <form id="search" method="post" action="/" role="search">
+          <span class="search-box">
+            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+          </span>
+        </form>
+    </div> -->
+
+    <div class="navbar-mobile-menu" onclick=""> 
+      <span class="icon-menu cross"><span class="middle"></span></span> 
+        <ul> 
+          
+          <li>
+          <a href="index.html">首页</a>
+          </li>
+          
+          <li>
+          <a href="archives.html">归档</a>
+          </li>
+          
+          <li>
+          <a href="about.html">关于</a>
+          </li>
+          
+        </ul> 
+    </div> 
+  </div> 
+</header>
+<!-- 头部结束 --> <!-- post 开始 -->
+<div class="bg-white" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
+	<article class="main-content page-page" style="max-width: 700px;padding: 110px 25px 20px" itemscope="" itemtype="http://schema.org/Article">
+		<div class="post-header">
+			<!-- title -->
+			<div class="post-header">
+				<h1 class="post-title itemprop="name headline">MYSQL十大常用字符串函数</h1>	
+				<div class="post-data">
+					<time datetime="2022-01-20T02:17:55+08:00" pubdate data-updated="true">2022/01/20</time>
+				</div>
+			</div>
+		</div>
+	<div id="post-content" class="post-content" itemprop="articleBody"> 
+		<p class="post-tags"> 
+		
+		<a href='sql.html'>数据库</a>&nbsp;
+		
+		</p>
+	<!-- 正文 -->
+		<p>
+		<h3><a id="concat" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>CONCAT()</h3>
+<pre><code class="language-sql">/* 字符串拼接 */
+SELECT CONCAT('MySQL', '字符串', '函数') AS str;
+
+/* 若任意一字段为null，返回结果为null */
+SELECT CONCAT('MySQL', NULL, '函数') AS str;
+
+/* 字符串常量可直接连接在一起 */
+SELECT 'MySQL' '字符串' '函数' AS str;
+
+/* 使用指定分隔符，分隔符为null则返回结果为null */
+SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
+       CONCAT_WS(NULL, 'MySQL', '字符串') AS str2;
+</code></pre>
+<h3><a id="lower" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>LOWER()</h3>
+<pre><code class="language-sql">/* LOWER(str)和LCASE(str)函数用于将字符串转换为小写形式 */
+SELECT LOWER('MySQL字符串函数') AS str1, LCASE('MySQL字符串函数') AS str2;
+
+/* MySQL 大小写转换函数不支持二进制字符串（BINARY、VARBINARY、BLOB)），可以将其转换为非二进制的字符串之后再进行处理 */
+SELECT LOWER(BINARY 'MySQL字符串函数') AS str1,
+       LOWER(CONVERT(BINARY 'MySQL字符串函数' USING utf8mb4)) AS str2;
+</code></pre>
+<h3><a id="upper" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>UPPER()</h3>
+<pre><code class="language-sql">/* UPPER(str)和UCASE(str)函数用于将字符串转换为大写形式 */
+SELECT UPPER('MySQL字符串函数') AS str1, UCASE('MySQL字符串函数') AS str2;
+</code></pre>
+<h3><a id="length" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>LENGTH()</h3>
+<pre><code class="language-sql">/**
+ * LENGTH(str)和OCTET_LENGTH(str)函数用于返回字符串的字节长度
+ * 在 utf8mb4 编码中，一个汉字字符占用 3 个字节
+ */
+SELECT LENGTH('MySQL字符串函数') AS len1, OCTET_LENGTH('MySQL字符串函数') AS len2;
+
+/* CHAR_LENGTH(str)和CHARACTER_LENGTH(str)函数用于返回字符串的字符长度，也就是字符个数 */
+SELECT CHAR_LENGTH('MySQL字符串函数') AS len1, CHARACTER_LENGTH('MySQL字符串函数') AS len2;
+
+/**
+ * BIT_LENGTH(str)函数用于返回字符串的比特长度（比特数量）
+ * 一个字节包含 8 个比特
+ */
+SELECT BIT_LENGTH('MySQL字符串函数') AS len;
+</code></pre>
+<h3><a id="substring" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>SUBSTRING()</h3>
+<pre><code class="language-sql">/* SUBSTRING(str,pos)、
+   SUBSTRING(str FROM pos)、
+   SUBSTRING(str,pos,len)
+   以及SUBSTRING(str FROM pos FOR len)函数
+   都可以用于返回从指定位置 pos 开始的子串，
+   len 表示返回子串的长度；pos 为 0 表示返回空字符串。
+   SUBSTR()和MID()函数都是 SUBSTRING() 函数的同义词，也支持以上 4 种形式。
+ */
+ SELECT SUBSTRING('MySQL字符串函数', 6) AS str1,
+       SUBSTRING('MySQL字符串函数' FROM 6) AS str2,
+       SUBSTRING('MySQL字符串函数', 6, 3) AS str3,
+       SUBSTRING('MySQL字符串函数' FROM 6 FOR 3) AS str4,
+       SUBSTRING('MySQL字符串函数', 0) AS str5;
+
+/* 位置参数 pos 可以为负数，此时返回的子串从字符串右侧第 pos 个字符开始 */
+SELECT SUBSTRING('MySQL字符串函数', -2) AS str1,
+       SUBSTRING('MySQL字符串函数', -5, 3) AS str2;
+
+/* LEFT(str,len)函数返回字符串 str 左侧的 len 个字符，RIGHT(str,len)函数返回字符串 str 右侧的 len 个字符 */
+SELECT LEFT('MySQL字符串函数',5) AS str1,
+       RIGHT('MySQL字符串函数',5) AS str2;
+
+/** 
+ * SUBSTRING_INDEX(str,delim,count)函数返回第 count 个分隔符 delim 之前的子串。
+ * 如果 count 为正数，从左侧开始计数并返回左侧的所有字符；
+ * 如果 count 为负数，从右侧开始计数并返回右侧的所有字符
+ */
+ SELECT SUBSTRING_INDEX('张三;李四;王五', ';', 2) AS str1,
+       SUBSTRING_INDEX('张三;李四;王五', ';', -2) AS str2;
+</code></pre>
+<h3><a id="trim" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>TRIM()</h3>
+<pre><code class="language-sql">/* TRIM([remstr FROM] str)函数用于返回删除字符串 str 两侧所有 remstr 字符串之后的子串，remstr 默认为空格 */
+SELECT TRIM('  MySQL字符串函数  ') AS str1,
+       TRIM('-' FROM '--MySQL字符串函数--') AS str2;
+
+/**
+ * TRIM([{BOTH | LEADING | TRAILING} [remstr] FROM] str)函数
+ * 用于返回删除字符串 str 两侧/左侧/右侧所有 remstr 字符串之后的子串，
+ * 默认删除两侧字符串（BOTH），
+ * remstr 默认为空格
+ */
+SELECT TRIM(LEADING ' ' FROM '  MySQL字符串函数  ') AS str1,
+       TRIM(TRAILING '-' FROM '--MySQL字符串函数--') AS str2,
+       TRIM(BOTH '-' FROM '-MYSQL字符串函数-') AS str3;
+</code></pre>
+<h3><a id="lpad-rpad" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>LPAD()/RPAD()</h3>
+<pre><code class="language-sql">/**
+ * LPAD(str,len,padstr)函数表示字符串 str 的左侧使用 padstr 进行填充，直到长度为 len；
+ * RPAD(str,len,padstr)函数表示在字符串 str 的右侧使用 padstr 进行填充，直到长度为 len
+ * 当字符串 str 的长度大于 len 时，相当于从右侧截断字符串。
+ */
+SELECT LPAD(123, 6, '0') AS str1, LPAD(123, 2, '0') AS str2,
+       RPAD(123, 6, '0') AS str1, RPAD(123, 2, '0') AS str1;
+
+/* REPEAT(str,count)函数用于将字符串 str 复制 count 次并返回结果 */
+SELECT REPEAT('1', 5) AS str;
+</code></pre>
+<h3><a id="instr" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>INSTR()</h3>
+<pre><code class="language-sql">/* INSTR(str,substr)函数用于返回子串 substr 在字符串 str 中第一次出现的索引位置，没有找到子串时返回 0 */
+select INSTR('MySQL字符串函数', '字符串') AS index1,
+       INSTR('MySQL字符串函数', '日期') AS index2,
+       INSTR('MySQL字符串函数', '') AS index3,
+       INSTR('MySQL字符串函数', null) AS index4;
+
+/**
+ * LOCATE(substr,str)函数也可以用于返回子串 substr 在字符串 str 中第一次出现的索引位置，
+ * 和 INSTR(str,substr) 函数唯一的不同就是参数的顺序相反。
+ */
+SELECT LOCATE('S','MySQL Server', 5) AS ind;
+
+/* FIELD(str,str1,str2,str3,…) 函数返回字符串 str 在后续字符串列表中出现的位置，没有找到时返回 0。 */
+SELECT FIELD('李四', '张三', '李四', '王五') AS ind;
+
+/* FIND_IN_SET(str,strlist) 函数返回字符串 str 在列表字符串 strlist 中出现的位置，strlist 由 N 个子串使用逗号分隔组成 */
+SELECT FIND_IN_SET('李四', '张三,李四,王五') AS ind;
+</code></pre>
+<h3><a id="replace" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>REPLACE()</h3>
+<pre><code class="language-sql">/* REPLACE(str,from_str,to_str)函数用于将字符串 str 中所有的 from_str 替换为 to_str，返回替换后的字符串。 */
+SELECT REPLACE('MySQL字符串函数', '字符串', '日期') AS str1,
+       REPLACE('MySQL字符串函数', '字符串', '') AS str2;
+
+/* INSERT(str,pos,len,newstr)函数用于在字符串 str 的指定位置 pos 之后插入子串 newstr，替换随后的 len 个字符。 */
+SELECT INSERT('MySQL字符串函数', 6, 3, '日期') AS str;
+</code></pre>
+<h3><a id="reverse" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>REVERSE()</h3>
+<pre><code class="language-sql">/* REVERSE(str)函数用于将字符串 str 中的字符顺序进行反转。 */
+SELECT REVERSE('上海自来水来自海上')='上海自来水来自海上' AS &quot;回文&quot;;
+</code></pre>
+
+		</p>
+		<!-- 侧边导航条 -->
+		<div id="directory-content" class="directory-content">
+    		<div id="directory" style="margin-left: 50px;margin-top: 120px"></div>
+		</div>
+	<!-- JS -->
+	<script>
+		var postDirectoryBuild = function() {
+		    var postChildren = function children(childNodes, reg) {
+		        var result = [],
+		            isReg = typeof reg === 'object',
+		            isStr = typeof reg === 'string',
+		            node, i, len;
+		        for (i = 0, len = childNodes.length; i < len; i++) {
+		            node = childNodes[i];
+		            if ((node.nodeType === 1 || node.nodeType === 9) &&
+		                (!reg ||
+		                isReg && reg.test(node.tagName.toLowerCase()) ||
+		                isStr && node.tagName.toLowerCase() === reg)) {
+		                result.push(node);
+		            }
+		        }
+		        return result;
+		    },
+		    createPostDirectory = function(article, directory, isDirNum) {
+		        var contentArr = [],
+		            titleId = [],
+		            levelArr, root, level,
+		            currentList, list, li, link, i, len;
+		        levelArr = (function(article, contentArr, titleId) {
+		            var titleElem = postChildren(article.childNodes, /^h\d$/),
+		                levelArr = [],
+		                lastNum = 1,
+		                lastRevNum = 1,
+		                count = 0,
+		                guid = 1,
+		                id = 'directory' + (Math.random() + '').replace(/\D/, ''),
+		                lastRevNum, num, elem;
+		            while (titleElem.length) {
+		                elem = titleElem.shift();
+		                contentArr.push(elem.innerHTML);
+		                num = +elem.tagName.match(/\d/)[0];
+		                if (num > lastNum) {
+		                    levelArr.push(1);
+		                    lastRevNum += 1;
+		                } else if (num === lastRevNum ||
+		                    num > lastRevNum && num <= lastNum) {
+		                    levelArr.push(0);
+		                    lastRevNum = lastRevNum;
+		                } else if (num < lastRevNum) {
+		                    levelArr.push(num - lastRevNum);
+		                    lastRevNum = num;
+		                }
+		                count += levelArr[levelArr.length - 1];
+		                lastNum = num;
+		                elem.id = elem.id || (id + guid++);
+		                titleId.push(elem.id);
+		            }
+		            if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
+
+		            return levelArr;
+		        })(article, contentArr, titleId);
+		        currentList = root = document.createElement('ul');
+		        dirNum = [0];
+		        for (i = 0, len = levelArr.length; i < len; i++) {
+		            level = levelArr[i];
+		            if (level === 1) {
+		                list = document.createElement('ul');
+		                if (!currentList.lastElementChild) {
+		                    currentList.appendChild(document.createElement('li'));
+		                }
+		                currentList.lastElementChild.appendChild(list);
+		                currentList = list;
+		                dirNum.push(0);
+		            } else if (level < 0) {
+		                level *= 2;
+		                while (level++) {
+		                    if (level % 2) dirNum.pop();
+		                    currentList = currentList.parentNode;
+		                }
+		            }
+		            dirNum[dirNum.length - 1]++;
+		            li = document.createElement('li');
+		            link = document.createElement('a');
+		            link.href = '#' + titleId[i];
+		            link.innerHTML = !isDirNum ? contentArr[i] :
+		                dirNum.join('.') + ' ' + contentArr[i] ;
+		            li.appendChild(link);
+		            currentList.appendChild(li);
+		        }
+		        directory.appendChild(root);
+		    };
+		    createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
+		};
+		postDirectoryBuild();
+	</script>	
+	<!-- 版权声明 -->
+		<p class="post-info" style="color: #BCBDB6">
+				本文由 <a style="color: #BCBDB6" href="#">Daimon
+				</a> 创作，采用 <a style="color: #BCBDB6" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: 2022-01-20T02:17:55+08:00
+		</p>
+	<!-- 导航 -->
+			<div id="comments" class="clearfix" style="padding: 0px;">
+				<footer class="post-footer clearfix">	    			
+				    <div class="meta">
+					    
+					    <P style="float: left;">
+					    	<a href="16426162894392.html" 
+					        title="Previous Post: sql索引在哪些场景下会失效">&laquo; sql索引在哪些场景下会失效</a>
+					    </p>
+					    <p style="float:right; ">
+					    	
+					    	
+					        <a href="16426162543809.html" 
+					        title="Next Post: 通过JavaService将Jar包注册为Windows服务">通过JavaService将Jar包注册为Windows服务 &raquo;</a>
+					    </p> 
+					    
+				    </div>
+			  	</footer>
+	<!-- footer end -->
+			</div>		
+	</div>
+</article>
+			<!-- 评论区 -->
+			<div id="respond-post-269" class="comment-container"> 
+				<div id="comments" class="clearfix">
+
+				<script type="text/javascript" src="/pm/hashover/hashover.js"></script>
+<noscript>You must have JavaScript enabled to use the comments.</noscript>
+
+<!-- 评论区结束 -->
+					<div>
+					
+					</div>
+
+				</div>
+			</div>
+</div>
+<!-- headroom -->
+<script type="text/javascript"> 
+(function() {
+    var header = new Headroom(document.querySelector("#header"), {
+        tolerance: 3,
+        offset : 80,
+        classes: {
+          initial: "animated",
+          pinned: "slideDown",
+          unpinned: "slideUp"
+        }
+    });
+    header.init();
+}());
+</script>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
+  <div class="footer-meta">
+    <div class="footer-container">
+      <!-- 版权说明 -->
+      <div class="meta-item meta-copyright">
+        <div class="meta-copyright-info">
+          <h2 class="meta-title">INFO</h2>
+          <div class="info-text">  
+              <p>Copyright &copy; 2017 <br>
+              <span class="credit">Powered by 
+              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
+              </span>
+              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
+              </p> 
+          </div>                  
+        </div>
+      </div>  
+      <!-- Categories -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">CATEGORIES</h2>  
+             
+            
+            <li>
+            <a href="designPattern.html">设计模式&nbsp;(6)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="sql.html">数据库&nbsp;(2)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="version.html">版本管理&nbsp;(1)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="informalEssay.html">随笔&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+      </div>
+      <!-- 最新文章 -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">RECENT POSTS</h2>
+
+          
+          
+         <li>
+           <a href="16427819836043.html">MarkDown语法</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用基本指令</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426162759334.html">MYSQL十大常用字符串函数</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+         </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+
+      </div>
+  </div>
+</div>
+</footer>
+
+<!--评论变量判断 -->
+      
+<!-- 评论end -->
+
+
+
+</body>
+</html>
