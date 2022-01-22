@@ -10,7 +10,7 @@
 
     <title>
       
-    代理模式 - myDoc
+    初探设计模式：代理模式 - myDoc
     
     </title>
 
@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -95,7 +101,7 @@
 		<div class="post-header">
 			<!-- title -->
 			<div class="post-header">
-				<h1 class="post-title itemprop="name headline">代理模式</h1>	
+				<h1 class="post-title itemprop="name headline">初探设计模式：代理模式</h1>	
 				<div class="post-data">
 					<time datetime="2022-01-20T01:55:25+08:00" pubdate data-updated="true">2022/01/20</time>
 				</div>
@@ -109,8 +115,11 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<h2><a id="%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态代理</h2>
+		<p><img src="media/16426149259286/1642841158450.jpg" alt="1642841158450" /></p>
+<blockquote>
 <p>业务场景：学生信息新增与删除</p>
+</blockquote>
+<h2><a id="%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>接口与实现类</h2>
 <pre><code class="language-java">public interface StudentService {
 
     /**
@@ -142,6 +151,7 @@
     }
 }
 </code></pre>
+<h2><a id="%E4%B8%9A%E5%8A%A1%E5%A4%84%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>业务处理</h2>
 <p>如果要针对新增或删除方法，新增日志输出或事务管理其他处理，难免要修改实现类</p>
 <pre><code class="language-java">public class StudentServiceImpl implements StudentService {
     /**
@@ -165,9 +175,14 @@
     }
 }
 </code></pre>
+<h2><a id="%E5%88%86%E6%9E%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析</h2>
 <p>类似这种修改方案，会导致代码越来越乱，可读性变差</p>
-<p><strong>面向对象编程需要对扩展开放，对修改封闭。</strong></p>
-<p>日志、事务等功能不属于学生管理的业务范畴，应当交给专门的类来做</p>
+<blockquote>
+<p>面向对象编程需要对扩展开放，对修改封闭。<br />
+日志、事务等功能不属于学生管理的业务范畴，应当交给专门的类来做</p>
+</blockquote>
+<h2><a id="%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态代理</h2>
+<h3><a id="%E6%96%B0%E5%A2%9E%E4%BB%A3%E7%90%86%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>新增代理类</h3>
 <pre><code class="language-java">public class StudentServiceProxy implements StudentService {
 
     private StudentService studentService;
@@ -197,6 +212,7 @@
     }
 }
 </code></pre>
+<h3><a id="%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>调用</h3>
 <p>这样新增代理类后，我们直接调用代理类就可以像业务类一样使用它，而不影响原有代码</p>
 <pre><code class="language-java">public class StaticProxyClient {
     public static void main(String[] args) {
@@ -208,12 +224,16 @@
 }
 </code></pre>
 <h2><a id="%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>动态代理</h2>
-<p>继通过静态代理解决问题后，有了新的问题：</p>
-<p>如果不止一个业务类需要做日志、事务等额外操作，我们都要给它新增代理类吗？</p>
-<p>显然不是这样，我们想要灵活运用代理，需要用到新的方案：<strong>动态代理</strong></p>
-<p>所谓动态代理，就是在程序运行时，动态的为被代理对象生成代理类，需要借助编程语言的反射特性</p>
-<p>Java为我们提供了十分方便的创建动态代理的工具包。当我们生成动态代理的时候，我们需要使用到<strong>InvocationHandler</strong>接口和<strong>Proxy</strong>类。</p>
-<h5><a id="1%E5%AE%9E%E7%8E%B0-invocationhandler%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%AE%9A%E4%B9%89%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%89%8D%E5%90%8E%E6%89%80%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.实现InvocationHandler接口，定义调用方法前后所做的事情：</h5>
+<h3><a id="%E5%88%86%E6%9E%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析</h3>
+<blockquote>
+<p>继通过<code>静态代理</code>解决问题后，有了新的问题：<br />
+如果不止一个业务类需要做日志、事务等额外操作，我们都要给它新增代理类吗？<br />
+显然不是这样，我们想要灵活运用代理，需要用到新的方案：<code>动态代理</code><br />
+所谓动态代理，就是在程序运行时，动态的为被代理对象生成代理类，需要借助编程语言的反射特性</p>
+</blockquote>
+<p>Java为我们提供了十分方便的创建动态代理的工具包。当我们生成动态代理的时候，我们需要使用到<code>InvocationHandler</code>接口和<code>Proxy</code>类。</p>
+<h3><a id="%E4%BC%98%E5%8C%96%E5%A4%84%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>优化处理</h3>
+<p>实现InvocationHandler接口，定义调用方法前后所做的事情：</p>
 <pre><code class="language-java">public class MyInvocationHandler implements InvocationHandler {
 
     private Object service;
@@ -231,7 +251,8 @@
     }
 }
 </code></pre>
-<h5><a id="2%E9%80%9A%E8%BF%87-proxy%E7%B1%BB%E7%9A%84newproxyinstance%E6%96%B9%E6%B3%95%EF%BC%8C%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86%E5%AF%B9%E8%B1%A1%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.通过Proxy类的newProxyInstance方法，动态生成代理对象：</h5>
+<h3><a id="%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>调用</h3>
+<p>通过Proxy类的newProxyInstance方法，动态生成代理对象：</p>
 <pre><code class="language-java">public class DynamicProxyClient {
     public static void main(String[] args) {
         StudentServiceImpl studentService = new StudentServiceImpl();
@@ -352,12 +373,16 @@
 				    <div class="meta">
 					    
 					    <P style="float: left;">
-					    	<a href="16426150512144.html" 
-					        title="Previous Post: 单例模式">&laquo; 单例模式</a>
+					    	<a href="16426162759334.html" 
+					        title="Previous Post: MYSQL十大常用字符串函数">&laquo; MYSQL十大常用字符串函数</a>
 					    </p>
 					    <p style="float:right; ">
 					    	
 					    	
+					        <a href="16426152225186.html" 
+					        title="Next Post: 初探设计模式：装饰器模式">初探设计模式：装饰器模式 &raquo;</a>
+					    </p> 
+					    
 				    </div>
 			  	</footer>
 	<!-- footer end -->
@@ -459,18 +484,6 @@
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -483,7 +496,19 @@
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

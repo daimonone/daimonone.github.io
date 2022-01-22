@@ -10,7 +10,7 @@
 
     <title>
       
-    装饰器模式 - myDoc
+    初探设计模式：装饰器模式 - myDoc
     
     </title>
 
@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -95,7 +101,7 @@
 		<div class="post-header">
 			<!-- title -->
 			<div class="post-header">
-				<h1 class="post-title itemprop="name headline">装饰器模式</h1>	
+				<h1 class="post-title itemprop="name headline">初探设计模式：装饰器模式</h1>	
 				<div class="post-data">
 					<time datetime="2022-01-20T02:00:22+08:00" pubdate data-updated="true">2022/01/20</time>
 				</div>
@@ -109,10 +115,11 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<h3><a id="%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>模式介绍</h3>
+		<p><img src="media/16426152225186/1642840386624.jpg" alt="1642840386624" /></p>
+<h2><a id="%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>模式介绍</h2>
 <p>与<a href="16426149259286.html">代理模式</a>的中介性质有所不同的是，装饰器模式是为了扩展对象的功能，可以针对对象做更为细化的操作</p>
-<p>装饰器模式大致分为四种核心角色：</p>
-<h5><a id="1-component%E6%8E%A5%E5%8F%A3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Component接口</h5>
+<p>装饰器模式大致分为四种核心角色：接口、实现类、抽象类、包装类</p>
+<h3><a id="component%E6%8E%A5%E5%8F%A3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Component接口</h3>
 <p>Component接口相当于接口根本的方法，比如现在有一个员工接口，员工基本职能为工作：</p>
 <pre><code class="language-java">public interface Staff {
 
@@ -122,7 +129,7 @@
     void work();
 }
 </code></pre>
-<h5><a id="2-concretecomponent%E5%AE%9E%E7%8E%B0%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. ConcreteComponent实现类</h5>
+<h3><a id="concretecomponent%E5%AE%9E%E7%8E%B0%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>ConcreteComponent实现类</h3>
 <p>ConcreteComponent类是员工接口的实现类。员工一、员工二：</p>
 <pre><code class="language-java">public class StaffOne implements Staff {
 
@@ -146,7 +153,7 @@
     }
 }
 </code></pre>
-<h5><a id="3-decorator%E6%8A%BD%E8%B1%A1%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Decorator抽象类</h5>
+<h3><a id="decorator%E6%8A%BD%E8%B1%A1%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decorator抽象类</h3>
 <p>Decorator类实现了Component接口，可以让每一个装饰器本身也可以被更外层的装饰器所包装，包装的方式就是把Component接口对象作为参数，传入到外层装饰器的构造函数当中。</p>
 <pre><code class="language-java">public class StaffDecorator implements Staff {
 
@@ -165,8 +172,8 @@
     }
 }
 </code></pre>
-<h5><a id="4-concretedecorator%E5%8C%85%E8%A3%85%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. ConcreteDecorator包装类</h5>
-<p><em>所有的包装类，都继承自Decorator抽象类，这么做是为了实现多层嵌套包装。扩充被包装类的功能</em></p>
+<h3><a id="concretedecorator%E5%8C%85%E8%A3%85%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>ConcreteDecorator包装类</h3>
+<p><em>所有的包装类，都继承自<code>Decorator</code>抽象类，这么做是为了实现多层嵌套包装。扩充被包装类的功能</em></p>
 <p><strong>开始工作，打开电脑：</strong></p>
 <pre><code class="language-java">public class TurnOnComputerDecorator extends StaffDecorator{
 
@@ -336,14 +343,14 @@
 				    <div class="meta">
 					    
 					    <P style="float: left;">
-					    	<a href="16426162168204.html" 
-					        title="Previous Post: Java中的日期类型">&laquo; Java中的日期类型</a>
+					    	<a href="16426149259286.html" 
+					        title="Previous Post: 初探设计模式：代理模式">&laquo; 初探设计模式：代理模式</a>
 					    </p>
 					    <p style="float:right; ">
 					    	
 					    	
-					        <a href="16426151705513.html" 
-					        title="Next Post: 建造者模式">建造者模式 &raquo;</a>
+					        <a href="16426163434587.html" 
+					        title="Next Post: Git常用指令">Git常用指令 &raquo;</a>
 					    </p> 
 					    
 				    </div>
@@ -447,18 +454,6 @@
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -471,7 +466,19 @@
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

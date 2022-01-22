@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -109,41 +115,41 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<p>所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。<br />
+		<p><img src="media/16426162894392/1642844963778.jpg" alt="1642844963778" /></p>
+<p>所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。<br />
 但是再执行另外的一条语句，同样的索引又正常起作用。所以索引的失效是针对某条sql语句，某个查询条件的，而不是针对索引本身的。</p>
 <span id="more"></span><!-- more -->
-<ol>
-<li>
+<h2><a id="%E5%88%A4%E7%A9%BA%E6%9F%A5%E8%AF%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>判空查询</h2>
 <p>索引字段进行判空查询时。也就是对索引字段判断是否为NULL时。语句为is null 或is not null。</p>
-<p><em><strong>比如：</strong></em></p>
-<pre><code class="language-sql">select * from SoftWareDetailInfo where CreateTime is null;
+<pre><code class="language-plain_text">***比如：***
+```sql
+select * from SoftWareDetailInfo where CreateTime is null;
 此时就不检索time字段上的索引表了。也就是索引在这条语句执行时失效了。
-</code></pre>
-<p><em><strong>接着再执行：</strong></em></p>
-<pre><code class="language-sql">select * from SoftWareDetailInfo where CreateTime = '2015-04-11 00:00:00';
+```
+
+***接着再执行：***
+```sql
+select * from SoftWareDetailInfo where CreateTime = '2015-04-11 00:00:00';
 此时就会检索索引表了。索引又起作用了。
+```
 </code></pre>
-</li>
-<li>
+<h2><a id="%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>模糊查询</h2>
 <p>对索引字段进行like查询时。比如：select * from SoftWareDetailInfo where SoftUseLine like '%OQC%'。不过网上有的例子说like 'xx%'索引起作用。我没试过。</p>
-</li>
-<li>
+<h2><a id="%E9%9D%9E%E7%AD%89%E6%9F%A5%E8%AF%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>非等查询</h2>
 <p>判断索引列是否不等于某个值时。‘!=’操作符。比如：select * from SoftWareDetailInfo where SoftUseLine != 0</p>
-</li>
-<li>
+<h2><a id="%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>函数运算</h2>
 <p>对索引列进行运算。这里运算包括+-*/等运算。也包括使用函数。</p>
-<p><em><strong>比如：</strong></em></p>
-<pre><code class="language-sql">select * from SoftWareDetailInfo where SoftUseLine +0= 0
+<pre><code class="language-plain_text">***比如：***
+```sql
+select * from SoftWareDetailInfo where SoftUseLine +0= 0
 此时索引不起作用。
 select * from SoftWareDetailInfo where count(SoftUseLine) = 0
 此时索引也不起作用。
+```
+***也就是说如果不是直接判断索引字段列，而是判断运算或其它函数处理后的索引列索引均不起作用。***
 </code></pre>
-<p><em><strong>也就是说如果不是直接判断索引字段列，而是判断运算或其它函数处理后的索引列索引均不起作用。</strong></em></p>
-</li>
-<li>
+<h2><a id="%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>复合索引</h2>
 <p>复合索引中的前导列没有被作为查询条件。比如：Index_SoftWareDetail索引包含（a，b，c） 三列，但是查询条件里面，没有a，b 列，只有c 列，那么 Index_SoftWareDetail索引也不起作用。</p>
-</li>
-</ol>
 
 		</p>
 		<!-- 侧边导航条 -->
@@ -251,12 +257,6 @@ select * from SoftWareDetailInfo where count(SoftUseLine) = 0
 				<footer class="post-footer clearfix">	    			
 				    <div class="meta">
 					    
-					    <P style="float: left;">
-					    	<a href="16426163434587.html" 
-					        title="Previous Post: Git常用基本指令">&laquo; Git常用基本指令</a>
-					    </p>
-					    <p style="float:right; ">
-					    	
 					    	
 					        <a href="16426162759334.html" 
 					        title="Next Post: MYSQL十大常用字符串函数">MYSQL十大常用字符串函数 &raquo;</a>
@@ -363,18 +363,6 @@ select * from SoftWareDetailInfo where count(SoftUseLine) = 0
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -387,7 +375,19 @@ select * from SoftWareDetailInfo where count(SoftUseLine) = 0
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

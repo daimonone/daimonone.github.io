@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -98,23 +104,21 @@
 					<div class="post-list-item-container">
  <!-- 自定post背景图 -->
 					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426162894392/1642844963778.jpg);">
 						
 						</div> 
 						<a href="16426162894392.html"> 
 							<div class="item-desc"> 
-								<p>所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。
+								<p>
+所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。
 但是再执行另外的一条语句，同样的索引又正常起作用。所以索引的失效是针对某条sql语句，某个查询条件的，而不是针对索引本身的。
 
-
-
+判空查询
 索引字段进行判空查询时。也就是对索引字段判断是否为NULL时。语句为is null 或is not null。
-比如：
+***比如：***
+```sql
 select * from SoftWareDetailInfo where CreateTime is null;
-此时就不检索time字段上的索引表了。也就是索引在这条语句执行时失效了。
-
-接着再执行：
-select *</p> 
+此时就不检索time字段上的索引表了。也就是索引在这条语句执行时失效了。</p> 
 							</div> 
 						</a> 
 <!-- 自定义Post颜色 -->
@@ -149,12 +153,13 @@ select *</p>
 					<div class="post-list-item-container">
  <!-- 自定post背景图 -->
 					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426162759334/1642845155998.jpg);">
 						
 						</div> 
 						<a href="16426162759334.html"> 
 							<div class="item-desc"> 
-								<p>CONCAT()
+								<p>
+CONCAT()
 /* 字符串拼接 */
 SELECT CONCAT('MySQL', '字符串', '函数') AS str;
 
@@ -166,7 +171,7 @@ SELECT 'MySQL' '字符串' '函数' AS str;
 
 /* 使用指定分隔符，分隔符为null则返回结果为null */
 SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
-       CONCAT_WS(NULL</p> 
+       CONCAT_WS(NUL</p> 
 							</div> 
 						</a> 
 <!-- 自定义Post颜色 -->
@@ -280,18 +285,6 @@ SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -304,7 +297,19 @@ SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

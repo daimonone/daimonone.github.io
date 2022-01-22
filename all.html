@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -98,12 +104,407 @@
 					<div class="post-list-item-container">
  <!-- 自定post背景图 -->
 					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426162894392/1642844963778.jpg);">
+						
+						</div> 
+						<a href="16426162894392.html"> 
+							<div class="item-desc"> 
+								<p>
+所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。
+但是再执行另外的一条语句，同样的索引又正常起作用。所以索引的失效是针对某条sql语句，某个查询条件的，而不是针对索引本身的。
+
+判空查询
+索引字段进行判空查询时。也就是对索引字段判断是否为NULL时。语句为is null 或is not null。
+***比如：***
+```sql
+select * from SoftWareDetailInfo where CreateTime is null;
+此时就不检索time字段上的索引表了。也就是索引在这条语句执行时失效了。</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426162894392.html">sql索引在哪些场景下会失效</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='sql.html'>数据库</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426162759334/1642845155998.jpg);">
+						
+						</div> 
+						<a href="16426162759334.html"> 
+							<div class="item-desc"> 
+								<p>
+CONCAT()
+/* 字符串拼接 */
+SELECT CONCAT('MySQL', '字符串', '函数') AS str;
+
+/* 若任意一字段为null，返回结果为null */
+SELECT CONCAT('MySQL', NULL, '函数') AS str;
+
+/* 字符串常量可直接连接在一起 */
+SELECT 'MySQL' '字符串' '函数' AS str;
+
+/* 使用指定分隔符，分隔符为null则返回结果为null */
+SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
+       CONCAT_WS(NUL</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426162759334.html">MYSQL十大常用字符串函数</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='sql.html'>数据库</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426149259286/1642841158450.jpg);">
+						
+						</div> 
+						<a href="16426149259286.html"> 
+							<div class="item-desc"> 
+								<p>
+
+业务场景：学生信息新增与删除
+
+接口与实现类
+public interface StudentService {
+
+    /**
+     * 新增学生
+     */
+    void insertStudent();
+
+    /**
+     * 删除学生
+     */
+    void deleteStudent();
+}
+
+public class StudentServiceImpl implements StudentService {
+    /**
+     * 新增学生
+     */
+    @Override
+    public void insertStud</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426149259286.html">初探设计模式：代理模式</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='designPattern.html'>设计模式</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426152225186/1642840386624.jpg);">
+						
+						</div> 
+						<a href="16426152225186.html"> 
+							<div class="item-desc"> 
+								<p>
+模式介绍
+与代理模式的中介性质有所不同的是，装饰器模式是为了扩展对象的功能，可以针对对象做更为细化的操作
+装饰器模式大致分为四种核心角色：接口、实现类、抽象类、包装类
+Component接口
+Component接口相当于接口根本的方法，比如现在有一个员工接口，员工基本职能为工作：
+public interface Staff {
+
+    /**
+     * 工作
+     */
+    void work();
+}
+
+ConcreteComponent实现类
+ConcreteComponent类是员工接口的实现类。员工一、员工二：
+public class StaffOne implem</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426152225186.html">初探设计模式：装饰器模式</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='designPattern.html'>设计模式</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426163434587/1642845303372.jpg);">
+						
+						</div> 
+						<a href="16426163434587.html"> 
+							<div class="item-desc"> 
+								<p>
+
+git自报家门
+git config --global user.name &quot;DaimonDuan&quot;
+git config --global user.email &quot;18621997334@163.com&quot;
+
+创建一个版本库
+git init
+
+添加文件到版本库
+// 添加到版本库
+git add 文件名
+
+// 确认添加（提交）到版本库
+git commit -m &quot;版本信息&quot;
+
+git status查看仓库状态
+红色：文件修改未添加版本库
+绿色：文件添加到版本库， 未提交
+nothing to commit, working </p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426163434587.html">Git常用指令</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='version.html'>版本管理</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426151705513/1642843654845.jpg);">
+						
+						</div> 
+						<a href="16426151705513.html"> 
+							<div class="item-desc"> 
+								<p>
+建造者模式与装饰器模式区别：
+装饰器模式是针对相同的处理方案，添加额外装饰
+建造者模式是针对固有的多种处理方式，选择性组合起来达成不同的结果
+
+建造者模式的关键，是将复杂对象的构建过程与它本身的表示分离，使得同样的构建过程可以创建不同的表示
+
+以饭店商品出单为例：
+定义一个商品类
+public class Product {
+
+    /**
+     * 套餐内容
+     */
+    private ArrayList&lt;String&gt; parts = new ArrayList&lt;String&gt;();
+
+    public void add(String par</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426151705513.html">初探设计模式：建造者模式</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='designPattern.html'>设计模式</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426150996929/1642843880368.jpg);">
+						
+						</div> 
+						<a href="16426150996929.html"> 
+							<div class="item-desc"> 
+								<p>
+业务场景：
+单一接口，根据业务编码传参进行不同处理方式
+少量业务编码基本都是用条件判断做一下简单处理，但考虑到业务后期发展，业务编码会越来越多，很容易出现 if else 嵌套地狱
+思考与解决
+这种情况，我们就考虑使用工厂模式来对业务代码进行拆分，使不同处理逻辑划分更清晰
+创建业务接口，并定义一个业务实现方法
+public interface BusinessService {
+
+    /**
+     * 业务应用
+     */
+    void use();
+}
+
+创建实现该接口的各个实现类
+public class BusinessServiceOneImpl implements</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16426150996929.html">初探设计模式：简单工厂模式</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='designPattern.html'>设计模式</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16427819836043/1642845424712.jpg);">
 						
 						</div> 
 						<a href="16427819836043.html"> 
 							<div class="item-desc"> 
-								<p>这是一个脚注：1
+								<p>
+脚注
+这是一个脚注：1
+待更
 
 
 
@@ -146,388 +547,21 @@
 					<div class="post-list-item-container">
  <!-- 自定post背景图 -->
 					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426163434587.html"> 
-							<div class="item-desc"> 
-								<p>
-git自报家门
-git config --global user.name &quot;DaimonDuan&quot;
-git config --global user.email &quot;18621997334@163.com&quot;
-
-创建一个版本库
-git init
-
-添加文件到版本库
-// 添加到版本库
-git add 文件名
-
-// 确认添加（提交）到版本库
-git commit -m &quot;版本信息&quot;
-
-git status查看仓库状态
-红色：文件修改未添加版本库
-绿色：文件添加到版本库， 未提交
-nothing to commit, working t</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426163434587.html">Git常用基本指令</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='version.html'>版本管理</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426162894392.html"> 
-							<div class="item-desc"> 
-								<p>所谓失效。并不真的就是这个索引被删除了。而是在某些情况下，DBMS不会检索索引列表了。执行速度和没有这个索引时的速度一样。
-但是再执行另外的一条语句，同样的索引又正常起作用。所以索引的失效是针对某条sql语句，某个查询条件的，而不是针对索引本身的。
-
-
-
-索引字段进行判空查询时。也就是对索引字段判断是否为NULL时。语句为is null 或is not null。
-比如：
-select * from SoftWareDetailInfo where CreateTime is null;
-此时就不检索time字段上的索引表了。也就是索引在这条语句执行时失效了。
-
-接着再执行：
-select *</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426162894392.html">sql索引在哪些场景下会失效</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='sql.html'>数据库</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426162759334.html"> 
-							<div class="item-desc"> 
-								<p>CONCAT()
-/* 字符串拼接 */
-SELECT CONCAT('MySQL', '字符串', '函数') AS str;
-
-/* 若任意一字段为null，返回结果为null */
-SELECT CONCAT('MySQL', NULL, '函数') AS str;
-
-/* 字符串常量可直接连接在一起 */
-SELECT 'MySQL' '字符串' '函数' AS str;
-
-/* 使用指定分隔符，分隔符为null则返回结果为null */
-SELECT CONCAT_WS('-', 'MySQL', NULL, '字符串') AS str1,
-       CONCAT_WS(NULL</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426162759334.html">MYSQL十大常用字符串函数</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='sql.html'>数据库</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426162543809.html"> 
-							<div class="item-desc"> 
-								<p>
-通过cmd命令java -jar运行起来的jar包，在cmd命令终止或窗口关闭时，服务会自动停止。
-解决方案：使用JavaService将jar包注册为服务，使其常驻后台
-
-
-应用准备：
-
-下载地址：http://download.forge.ow2.org/javaservice
-64位系统（Java也是64位的）的话必须下载64位版本，比如：JavaService_2_0_10-amd64.zip。
-打开CMD窗口，进入JavaService.exe所在目录，输入如下命令：
-
-JavaService.exe -install deepblog &quot;%JAVA_HOME%&quot</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='informalEssay.html'>随笔</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426162168204.html"> 
-							<div class="item-desc"> 
-								<p>Java中常见的日期类型操作
-
-一、调用Date的compareTo()方法来比较大小
-	SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-	Date startDate = sdf.parse(&quot;2020-09-02&quot;);
-	Date endDate = sdf.parse(&quot;2021-09-02&quot;);
-
-	//当止期早于起期时，止期=起期
-	int i = endDate.compareTo(startDate);
-	if(i == -1) {
-		System.</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426162168204.html">Java中的日期类型</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='informalEssay.html'>随笔</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426152225186.html"> 
-							<div class="item-desc"> 
-								<p>模式介绍
-与代理模式的中介性质有所不同的是，装饰器模式是为了扩展对象的功能，可以针对对象做更为细化的操作
-装饰器模式大致分为四种核心角色：
-1. Component接口
-Component接口相当于接口根本的方法，比如现在有一个员工接口，员工基本职能为工作：
-public interface Staff {
-
-    /**
-     * 工作
-     */
-    void work();
-}
-
-2. ConcreteComponent实现类
-ConcreteComponent类是员工接口的实现类。员工一、员工二：
-public class StaffOne implements Staf</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426152225186.html">装饰器模式</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='designPattern.html'>设计模式</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426151705513.html"> 
-							<div class="item-desc"> 
-								<p>建造者模式与装饰器模式区别：
-装饰器模式是针对相同的处理方案，添加额外装饰
-建造者模式是针对固有的多种处理方式，选择性组合起来达成不同的结果
-建造者模式的关键，是将复杂对象的构建过程与它本身的表示分离，使得同样的构建过程可以创建不同的表示
-以饭店商品出单为例：
-1. 先定义一个商品类
-public class Product {
-
-    /**
-     * 套餐内容
-     */
-    private ArrayList&lt;String&gt; parts = new ArrayList&lt;String&gt;();
-
-    public void add(String pa</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426151705513.html">建造者模式</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='designPattern.html'>设计模式</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426151396416/1642844164159.jpg);">
 						
 						</div> 
 						<a href="16426151396416.html"> 
 							<div class="item-desc"> 
-								<p>在简单工厂模式的基础上，做深层思考：
+								<p>
+思考
+在简单工厂模式的基础上，做深层考虑：
 
 一个接口，根据不同业务编码，我们建了一个工厂类来处理
 如果有多个接口都是类似情况呢？有没有办法合并一下？
 这个时候就要用到抽象工厂模式了
 
-一、创建另一个业务接口，并定义一个业务实现方法
+实现
+创建一个业务接口，并定义业务实现方法
 public interface OtherService {
 
     /**
@@ -536,13 +570,13 @@ public interface OtherService {
     void use();
 }
 
-二、创建实现该接口的各个实现类
+创建该接口的各个实现类
 public class OtherServiceOneImpl implements OtherService {
 
     /**
      * 接口应用一
      */
- </p> 
+   </p> 
 							</div> 
 						</a> 
 <!-- 自定义Post颜色 -->
@@ -553,7 +587,7 @@ public class OtherServiceOneImpl implements OtherService {
 						<div class="item-slant"></div>
 		 				<div class="item-label">
 	  						<div class="item-title">
-	  							<a href="16426151396416.html">抽象工厂模式</a>
+	  							<a href="16426151396416.html">初探设计模式：抽象工厂模式</a>
 	  						</div>
 		   					<div class="item-meta clearfix"> 
 <!-- 自定义Icon -->
@@ -577,26 +611,30 @@ public class OtherServiceOneImpl implements OtherService {
 					<div class="post-list-item-container">
  <!-- 自定post背景图 -->
 					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
+						<div class="item-thumb bg-deepgrey" style="background-image:url(media/16426162543809/1642846028781.jpg);">
 						
 						</div> 
-						<a href="16426150996929.html"> 
+						<a href="16426162543809.html"> 
 							<div class="item-desc"> 
-								<p>业务场景：
-单一接口，根据业务编码传参进行不同处理方式
-少量业务编码基本都是用条件判断做一下简单处理，但考虑到业务后期发展，业务编码会越来越多，很容易出现 if else 嵌套地狱
-这种情况，我们就考虑使用工厂模式来对业务代码进行拆分，使不同处理逻辑划分更清晰
-一、创建业务接口，并定义一个业务实现方法
-public interface BusinessService {
+								<p>
+思考
+我们偶尔会面对这种局面：
 
-    /**
-     * 业务应用
-     */
-    void use();
-}
 
-二、创建实现该接口的各个实现类
-public class BusinessServiceOneImpl implements Bu</p> 
+自己做了一个springboot项目，仅限于局域网访问
+环境是windows，不想让项目在ide运行，太占用空间
+通过cmd命令java -jar运行起来的jar包，在cmd命令终止或窗口关闭时，服务会自动停止。
+
+
+解决
+
+解决方案：使用JavaService将jar包注册为服务，使其常驻后台
+
+应用准备：
+
+下载地址：http://download.forge.ow2.org/javaservice
+64位系统（Java也是64位的）的话必须下载64位版本，比如：JavaService_2_0_10-amd64.zip。
+打开CMD窗口，进入JavaS</p> 
 							</div> 
 						</a> 
 <!-- 自定义Post颜色 -->
@@ -607,7 +645,7 @@ public class BusinessServiceOneImpl implements Bu</p>
 						<div class="item-slant"></div>
 		 				<div class="item-label">
 	  						<div class="item-title">
-	  							<a href="16426150996929.html">简单工厂模式</a>
+	  							<a href="16426162543809.html">JavaService</a>
 	  						</div>
 		   					<div class="item-meta clearfix"> 
 <!-- 自定义Icon -->
@@ -618,126 +656,7 @@ public class BusinessServiceOneImpl implements Bu</p>
 
 		   						<div class="item-meta-cat">
 	  							
-			    			<a class='category' href='designPattern.html'>设计模式</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426150512144.html"> 
-							<div class="item-desc"> 
-								<p>业务场景：
-一、懒汉式
-public class SingletonLazy {
-
-    /**
-     * 创建当前类私有化实例对象
-     */
-    private static SingletonLazy instance;
-
-    /**
-     * 设置构造函数私有化，使当前类不能被实例化
-     */
-    private SingletonLazy(){}
-
-    /**
-     * 获取唯一可用对象
-     * 加锁synchronized 保证单例
-     * @return
-     */
-    public static synchronize</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426150512144.html">单例模式</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='designPattern.html'>设计模式</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url();">
-						
-						</div> 
-						<a href="16426149259286.html"> 
-							<div class="item-desc"> 
-								<p>静态代理
-业务场景：学生信息新增与删除
-public interface StudentService {
-
-    /**
-     * 新增学生
-     */
-    void insertStudent();
-
-    /**
-     * 删除学生
-     */
-    void deleteStudent();
-}
-
-public class StudentServiceImpl implements StudentService {
-    /**
-     * 新增学生
-     */
-    @Override
-    public void insertStudent()</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16426149259286.html">代理模式</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='designPattern.html'>设计模式</a>
+			    			<a class='category' href='informalEssay.html'>随笔</a>
 								
 		   						</div> 
 		   					</div> 
@@ -758,8 +677,8 @@ public class StudentServiceImpl implements StudentService {
 				<li class=""><a href="archives.html">归档</a></li>
 
 			
-            	<li class=" disabled "><a href="#index">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-            
+			<li class=""><a href="all_1.html">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+			
             </ol>
      </nav>
 </div>
@@ -829,18 +748,6 @@ public class StudentServiceImpl implements StudentService {
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -853,7 +760,19 @@ public class StudentServiceImpl implements StudentService {
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

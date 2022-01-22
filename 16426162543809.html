@@ -10,7 +10,7 @@
 
     <title>
       
-    通过JavaService将Jar包注册为Windows服务 - myDoc
+    JavaService - myDoc
     
     </title>
 
@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -95,7 +101,7 @@
 		<div class="post-header">
 			<!-- title -->
 			<div class="post-header">
-				<h1 class="post-title itemprop="name headline">通过JavaService将Jar包注册为Windows服务</h1>	
+				<h1 class="post-title itemprop="name headline">JavaService</h1>	
 				<div class="post-data">
 					<time datetime="2022-01-20T02:17:34+08:00" pubdate data-updated="true">2022/01/20</time>
 				</div>
@@ -109,32 +115,41 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<ul>
+		<p><img src="media/16426162543809/1642846028781.jpg" alt="1642846028781" /></p>
+<h2><a id="%E6%80%9D%E8%80%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>思考</h2>
+<p>我们偶尔会面对这种局面：</p>
+<blockquote>
+<ul>
+<li>自己做了一个springboot项目，仅限于局域网访问</li>
+<li>环境是windows，不想让项目在ide运行，太占用空间</li>
 <li>通过cmd命令java -jar运行起来的jar包，在cmd命令终止或窗口关闭时，服务会自动停止。</li>
-<li>解决方案：使用JavaService将jar包注册为服务，使其常驻后台</li>
 </ul>
-<span id="more"></span><!-- more -->
-<p>应用准备：</p>
+</blockquote>
+<h2><a id="%E8%A7%A3%E5%86%B3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>解决</h2>
+<blockquote>
+<p>解决方案：使用<code>JavaService</code>将jar包注册为服务，使其常驻后台</p>
+</blockquote>
+<h3><a id="%E5%BA%94%E7%94%A8%E5%87%86%E5%A4%87%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>应用准备：</h3>
 <ol>
 <li>下载地址：<a href="http://download.forge.ow2.org/javaservice">http://download.forge.ow2.org/javaservice</a></li>
 <li>64位系统（Java也是64位的）的话必须下载64位版本，比如：JavaService_2_0_10-amd64.zip。</li>
 <li>打开CMD窗口，进入JavaService.exe所在目录，输入如下命令：</li>
 </ol>
-<pre><code class="language-plain_text">JavaService.exe -install deepblog &quot;%JAVA_HOME%&quot;\jre\bin\server\jvm.dll -Djava.class.path=C:\blogDev\deepblog.jar;&quot;%JAVA_HOME%&quot;\lib\tools.jar -Xms64M -Xmx512M -start org.springframework.boot.loader.JarLauncher
+<pre><code class="language-bat">JavaService.exe -install deepblog &quot;%JAVA_HOME%&quot;\jre\bin\server\jvm.dll -Djava.class.path=C:\blogDev\deepblog.jar;&quot;%JAVA_HOME%&quot;\lib\tools.jar -Xms64M -Xmx512M -start org.springframework.boot.loader.JarLauncher
 </code></pre>
-<p>参数解释：</p>
+<h3><a id="%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>参数解释：</h3>
 <pre><code class="language-plain_text">-install deepblog：指定服务名，当前注册的服务名为：deepblog
 -Djava.class.path=C:\blogDev\deepblog.jar：指定jar包的路径
 -start org.springframework.boot.loader.JarLauncher：指定启动类，即 main 函数所在类，需要带上包名
 </code></pre>
-<p>注销服务：</p>
-<pre><code class="language-plain_text">JavaService.exe -uninstall deepblog
+<h3><a id="%E6%B3%A8%E9%94%80%E6%9C%8D%E5%8A%A1%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>注销服务：</h3>
+<pre><code class="language-bat">JavaService.exe -uninstall deepblog
 </code></pre>
-<p>启动服务：</p>
-<pre><code class="language-plain_text">net start deepblog
+<h3><a id="%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>启动服务：</h3>
+<pre><code class="language-bat">net start deepblog
 </code></pre>
-<p>停止服务：</p>
-<pre><code class="language-plain_text">net stop deepblog
+<h3><a id="%E5%81%9C%E6%AD%A2%E6%9C%8D%E5%8A%A1%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>停止服务：</h3>
+<pre><code class="language-bat">net stop deepblog
 </code></pre>
 
 		</p>
@@ -244,14 +259,14 @@
 				    <div class="meta">
 					    
 					    <P style="float: left;">
-					    	<a href="16426162759334.html" 
-					        title="Previous Post: MYSQL十大常用字符串函数">&laquo; MYSQL十大常用字符串函数</a>
+					    	<a href="16426151396416.html" 
+					        title="Previous Post: 初探设计模式：抽象工厂模式">&laquo; 初探设计模式：抽象工厂模式</a>
 					    </p>
 					    <p style="float:right; ">
 					    	
 					    	
-					        <a href="16426162168204.html" 
-					        title="Next Post: Java中的日期类型">Java中的日期类型 &raquo;</a>
+					        <a href="16426150512144.html" 
+					        title="Next Post: 初探设计模式：单例模式">初探设计模式：单例模式 &raquo;</a>
 					    </p> 
 					    
 				    </div>
@@ -355,18 +370,6 @@
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -379,7 +382,19 @@
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

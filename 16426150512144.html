@@ -10,7 +10,7 @@
 
     <title>
       
-    单例模式 - myDoc
+    初探设计模式：单例模式 - myDoc
     
     </title>
 
@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -95,7 +101,7 @@
 		<div class="post-header">
 			<!-- title -->
 			<div class="post-header">
-				<h1 class="post-title itemprop="name headline">单例模式</h1>	
+				<h1 class="post-title itemprop="name headline">初探设计模式：单例模式</h1>	
 				<div class="post-data">
 					<time datetime="2022-01-20T01:57:31+08:00" pubdate data-updated="true">2022/01/20</time>
 				</div>
@@ -109,8 +115,20 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<p>业务场景：</p>
-<h4><a id="%E4%B8%80%E3%80%81%E6%87%92%E6%B1%89%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>一、懒汉式</h4>
+		<p><img src="media/16426150512144/1642844327783.jpg" alt="1642844327783" /></p>
+<h2><a id="%E6%80%9D%E8%80%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>思考</h2>
+<p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+<blockquote>
+<p>注意:</p>
+<ul>
+<li>单例类只能有一个实例。</li>
+<li>单例类必须自己创建自己的唯一实例。</li>
+<li>单例类必须给所有其他对象提供这一实例。</li>
+</ul>
+</blockquote>
+<h2><a id="%E4%BA%94%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>五种实现方式</h2>
+<h3><a id="%E6%87%92%E6%B1%89%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>懒汉式</h3>
 <pre><code class="language-java">public class SingletonLazy {
 
     /**
@@ -144,7 +162,7 @@
     }
 }
 </code></pre>
-<h4><a id="%E4%BA%8C%E3%80%81%E9%A5%BF%E6%B1%89%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>二、饿汉式</h4>
+<h3><a id="%E9%A5%BF%E6%B1%89%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>饿汉式</h3>
 <pre><code class="language-java">public class SingletonHungry {
 
     /**
@@ -173,7 +191,7 @@
     }
 }
 </code></pre>
-<h4><a id="%E4%B8%89%E3%80%81%E5%8F%8C%E9%87%8D%E6%A0%A1%E9%AA%8C%E9%94%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>三、双重校验锁</h4>
+<h3><a id="%E5%8F%8C%E9%87%8D%E6%A0%A1%E9%AA%8C%E9%94%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>双重校验锁</h3>
 <pre><code class="language-java">public class SingletonLocking {
 
     /**
@@ -209,7 +227,7 @@
     }
 }
 </code></pre>
-<h4><a id="%E5%9B%9B%E3%80%81%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>四、静态内部类</h4>
+<h3><a id="%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态内部类</h3>
 <pre><code class="language-java">public class SingletonInner {
 
     private static class SingletonHolder {
@@ -237,7 +255,7 @@
     }
 }
 </code></pre>
-<h4><a id="%E4%BA%94%E3%80%81%E6%9E%9A%E4%B8%BE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>五、枚举</h4>
+<h3><a id="%E6%9E%9A%E4%B8%BE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>枚举</h3>
 <pre><code class="language-java">public enum ENUM_SINGLETON {
 
     /**
@@ -253,7 +271,7 @@
     }
 }
 </code></pre>
-<h4><a id="%E5%85%AD%E3%80%81%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>六、调用方法</h4>
+<h2><a id="%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>调用</h2>
 <pre><code class="language-java">public class SingletonClient {
 
     public static void main(String[] args) {
@@ -435,14 +453,14 @@
 				    <div class="meta">
 					    
 					    <P style="float: left;">
-					    	<a href="16426150996929.html" 
-					        title="Previous Post: 简单工厂模式">&laquo; 简单工厂模式</a>
+					    	<a href="16426162543809.html" 
+					        title="Previous Post: JavaService">&laquo; JavaService</a>
 					    </p>
 					    <p style="float:right; ">
 					    	
 					    	
-					        <a href="16426149259286.html" 
-					        title="Next Post: 代理模式">代理模式 &raquo;</a>
+					        <a href="16426162168204.html" 
+					        title="Next Post: Java中常见的日期类型操作">Java中常见的日期类型操作 &raquo;</a>
 					    </p> 
 					    
 				    </div>
@@ -546,18 +564,6 @@
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -570,7 +576,19 @@
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           

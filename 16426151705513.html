@@ -10,7 +10,7 @@
 
     <title>
       
-    建造者模式 - myDoc
+    初探设计模式：建造者模式 - myDoc
     
     </title>
 
@@ -57,6 +57,8 @@
         
         <a href="about.html">关于</a>
         
+        <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+        
         
     </div> 
     <!-- 搜索框体 -->
@@ -85,6 +87,10 @@
           <a href="about.html">关于</a>
           </li>
           
+          <li>
+          <a href="https://nav.rdonly.com/laboratory/bgimage/backimage.html">配图制作</a>
+          </li>
+          
         </ul> 
     </div> 
   </div> 
@@ -95,7 +101,7 @@
 		<div class="post-header">
 			<!-- title -->
 			<div class="post-header">
-				<h1 class="post-title itemprop="name headline">建造者模式</h1>	
+				<h1 class="post-title itemprop="name headline">初探设计模式：建造者模式</h1>	
 				<div class="post-data">
 					<time datetime="2022-01-20T01:59:30+08:00" pubdate data-updated="true">2022/01/20</time>
 				</div>
@@ -109,12 +115,15 @@
 		</p>
 	<!-- 正文 -->
 		<p>
-		<h3><a id="%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>建造者模式与装饰器模式区别：</h3>
-<p>装饰器模式是针对相同的处理方案，添加额外装饰<br />
+		<p><img src="media/16426151705513/1642843654845.jpg" alt="1642843654845" /></p>
+<h2><a id="%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>建造者模式与装饰器模式区别：</h2>
+<p><a href="16426152225186.html">装饰器模式</a>是针对相同的处理方案，添加额外装饰<br />
 建造者模式是针对固有的多种处理方式，选择性组合起来达成不同的结果</p>
+<blockquote>
 <p>建造者模式的关键，是将复杂对象的构建过程与它本身的表示分离，使得同样的构建过程可以创建不同的表示</p>
-<h3><a id="%E4%BB%A5%E9%A5%AD%E5%BA%97%E5%95%86%E5%93%81%E5%87%BA%E5%8D%95%E4%B8%BA%E4%BE%8B%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>以饭店商品出单为例：</h3>
-<h5><a id="1%E5%85%88%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%95%86%E5%93%81%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 先定义一个商品类</h5>
+</blockquote>
+<h2><a id="%E4%BB%A5%E9%A5%AD%E5%BA%97%E5%95%86%E5%93%81%E5%87%BA%E5%8D%95%E4%B8%BA%E4%BE%8B%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>以饭店商品出单为例：</h2>
+<h3><a id="%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%95%86%E5%93%81%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义一个商品类</h3>
 <pre><code class="language-java">public class Product {
 
     /**
@@ -131,7 +140,7 @@
     }
 }
 </code></pre>
-<h5><a id="2%E4%BD%BF%E7%94%A8%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%AE%9A%E4%B9%89%E5%87%BA%E5%BA%97%E5%AE%B6%E5%8F%AF%E4%BE%9B%E9%80%89%E6%8B%A9%E7%9A%84%E5%95%86%E5%93%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 使用抽象类定义出店家可供选择的商品</h5>
+<h3><a id="%E4%BD%BF%E7%94%A8%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%AE%9A%E4%B9%89%E5%87%BA%E5%BA%97%E5%AE%B6%E5%8F%AF%E4%BE%9B%E9%80%89%E6%8B%A9%E7%9A%84%E5%95%86%E5%93%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用抽象类定义出店家可供选择的商品</h3>
 <pre><code class="language-java">public abstract class ProductBuilder {
 
     /**
@@ -161,7 +170,7 @@
     public abstract Product build();
 }
 </code></pre>
-<h5><a id="3%E5%95%86%E5%93%81%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%90%8E%E5%8E%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. 商品的具体实现(后厨)</h5>
+<h3><a id="%E5%95%86%E5%93%81%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%90%8E%E5%8E%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>商品的具体实现(后厨)</h3>
 <pre><code class="language-java">public class ProductBuilderConcrete extends ProductBuilder {
 
     private Product product = new Product();
@@ -209,7 +218,7 @@
     }
 }
 </code></pre>
-<h5><a id="4%E5%95%86%E5%93%81%E9%80%89%E6%8B%A9%E6%90%AD%E9%85%8D%EF%BC%88%E5%A5%97%E9%A4%90%E9%80%89%E6%8B%A9%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. 商品选择搭配（套餐选择）</h5>
+<h3><a id="%E5%95%86%E5%93%81%E9%80%89%E6%8B%A9%E6%90%AD%E9%85%8D%EF%BC%88%E5%A5%97%E9%A4%90%E9%80%89%E6%8B%A9%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>商品选择搭配（套餐选择）</h3>
 <pre><code class="language-java">public class ProductDirectorOne {
     private ProductBuilder builder;
 
@@ -236,7 +245,7 @@
     }
 }
 </code></pre>
-<h5><a id="5%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8B%E5%8D%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. 客户端下单</h5>
+<h3><a id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8B%E5%8D%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>客户端下单</h3>
 <pre><code class="language-java">public class BuilderModeClient {
 
     public static void main(String[] args) {
@@ -377,14 +386,14 @@
 				    <div class="meta">
 					    
 					    <P style="float: left;">
-					    	<a href="16426152225186.html" 
-					        title="Previous Post: 装饰器模式">&laquo; 装饰器模式</a>
+					    	<a href="16426163434587.html" 
+					        title="Previous Post: Git常用指令">&laquo; Git常用指令</a>
 					    </p>
 					    <p style="float:right; ">
 					    	
 					    	
-					        <a href="16426151396416.html" 
-					        title="Next Post: 抽象工厂模式">抽象工厂模式 &raquo;</a>
+					        <a href="16426150996929.html" 
+					        title="Next Post: 初探设计模式：简单工厂模式">初探设计模式：简单工厂模式 &raquo;</a>
 					    </p> 
 					    
 				    </div>
@@ -488,18 +497,6 @@
           
           
          <li>
-           <a href="16427819836043.html">MarkDown语法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16426163434587.html">Git常用基本指令</a><br>
-         </li>
-          
-          
-          
-         <li>
            <a href="16426162894392.html">sql索引在哪些场景下会失效</a><br>
          </li>
           
@@ -512,7 +509,19 @@
           
           
          <li>
-           <a href="16426162543809.html">通过JavaService将Jar包注册为Windows服务</a><br>
+           <a href="16426149259286.html">初探设计模式：代理模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426152225186.html">初探设计模式：装饰器模式</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16426163434587.html">Git常用指令</a><br>
          </li>
           
           
